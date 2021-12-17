@@ -28,7 +28,8 @@ class CommandUtilities:
             self.command, stdout=subprocess.PIPE, stderr=subprocess.PIPE
         )
         res, err = proc.communicate(timeout=self.timeout)
-        if err is not 0:
+
+        if err != b"":
             return err.decode(self.encoding)
         elif res:
             return res.decode(self.encoding)
