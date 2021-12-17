@@ -21,11 +21,14 @@ class CommandUtilities:
         self.encoding = encoding
 
     def run(self):
+        """
+        :return: If error occur, return err
+        """
         proc = subprocess.Popen(
             self.command, stdout=subprocess.PIPE, stderr=subprocess.PIPE
         )
         res, err = proc.communicate(timeout=self.timeout)
-        if err is None:
+        if err is not 0:
             return err.decode(self.encoding)
         elif res:
             return res.decode(self.encoding)
