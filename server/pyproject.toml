@@ -1,15 +1,11 @@
 [tool.poetry]
-name = "command-que"
-version = "0.0.1"
+name = "server"
+version = "0.1.0"
 description = ""
 authors = ["fish895623 <dan990429@gmail.com>"]
-license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-
-[tool.poetry.scripts]
-test = "tests.scripts:start"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
